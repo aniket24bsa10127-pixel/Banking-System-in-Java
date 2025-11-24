@@ -17,15 +17,17 @@ Features:
 5. Basic error handling for invalid transaction amounts.
 
 Technologies/Tools Used:
-Java (JDK 8 or above)
 
-Command-line interface (console)
+1. Java (JDK 8 or above)
 
-Any Java IDE or text editor (e.g., IntelliJ, Eclipse, VS Code)
+2. Command-line interface (console)
 
-Git and GitHub for version control and submission
+3. Any Java IDE or text editor (e.g., IntelliJ, Eclipse, VS Code)
+
+4. Git and GitHub for version control and submission
 
 Steps to Install & Run the Project:
+
 1. Installation:
 
 Install Java Development Kit (JDK) from oracle.com.
