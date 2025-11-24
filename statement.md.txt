@@ -1,0 +1,22 @@
+Problem Statement:
+Managing basic banking transactions like account creation, deposits, withdrawals, and balance inquiries manually or with unstructured tools is time-consuming, error-prone, and inflexible for beginners learning programming concepts. There is a need for a simple, user-friendly banking system simulation that helps users perform these core functions reliably and efficiently through a Java console application.
+
+Scope of the Project:
+This project focuses on modeling a single user’s bank account with essential banking operations such as deposit, withdrawal, and viewing account details. It simulates the banking process for educational purposes and does not include complex features like multiple accounts management, security, or networking. The scope is limited to basic transaction handling in a console-based interactive environment.
+
+Target Users:
+1. Beginners and students learning Java programming and object-oriented design.
+
+2. Educators looking for a basic example project in Java.
+
+3. Individuals seeking to understand fundamental banking operations implemented programmatically.
+
+High-Level Features:
+
+1. Unique account creation with account holder's name and initial deposit.
+
+2. Deposit funds with validation against invalid amounts.
+
+3. Withdraw funds with balance check and error handling.
+
+4. Display current account details including account number, holder name, and balance.
