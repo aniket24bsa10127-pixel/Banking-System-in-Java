@@ -1,0 +1,102 @@
+import java.util.Scanner;
+
+public class BankingSystem {
+
+    
+    static class BankAccount {
+        private static int nextAccountNumber = 1001;
+        private int accountNumber;
+        private String accountHolderName;
+        private double balance;
+
+        public BankAccount(String accountHolderName, double initialBalance) {
+            this.accountNumber = nextAccountNumber++;
+            this.accountHolderName = accountHolderName;
+            this.balance = initialBalance;
+        }
+
+        public int getAccountNumber() {
+            return accountNumber;
+        }
+
+        public String getAccountHolderName() {
+            return accountHolderName;
+        }
+
+        public double getBalance() {
+            return balance;
+        }
+
+        public void deposit(double amount) {
+            if (amount > 0) {
+                balance += amount;
+                System.out.println("Deposited: " + amount);
+            } else {
+                System.out.println("Invalid deposit amount.");
+            }
+        }
+
+        public void withdraw(double amount) {
+            if (amount > 0 && amount <= balance) {
+                balance -= amount;
+                System.out.println("Withdrawn: " + amount);
+            } else {
+                System.out.println("Invalid or insufficient funds for withdrawal.");
+            }
+        }
+
+        public void displayAccountDetails() {
+            System.out.println("Account Number: " + accountNumber);
+            System.out.println("Account Holder: " + accountHolderName);
+            System.out.println("Balance: $" + balance);
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to Banking System!");
+        System.out.print("Enter Account Holder Name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter Initial Deposit Amount: ");
+        double initialDeposit = scanner.nextDouble();
+
+        BankAccount account = new BankAccount(name, initialDeposit);
+
+        boolean exit = false;
+        while (!exit) {
+            System.out.println("\nChoose an option:");
+            System.out.println("1. Deposit");
+            System.out.println("2. Withdraw");
+            System.out.println("3. Display Account Details");
+            System.out.println("4. Exit");
+
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter amount to deposit: ");
+                    double depositAmount = scanner.nextDouble();
+                    account.deposit(depositAmount);
+                    break;
+                case 2:
+                    System.out.print("Enter amount to withdraw: ");
+                    double withdrawalAmount = scanner.nextDouble();
+                    account.withdraw(withdrawalAmount);
+                    break;
+                case 3:
+                    account.displayAccountDetails();
+                    break;
+                case 4:
+                    exit = true;
+                    System.out.println("Thank you for using Banking System.");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Try again.");
+            }
+        }
+
+        scanner.close();
+    }
+}
